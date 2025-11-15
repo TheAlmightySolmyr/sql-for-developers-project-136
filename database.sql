@@ -1,38 +1,38 @@
 CREATE TABLE Lessons (
-    id ,
-    lesson_name ,
+    id SMALLINT PRIMARY KEY,
+    lesson_name VARCHAR(100) NOT NULL,
     lesson_content ,
-    video_url ,
+    video_url VARCHAR(100) NOT NULL,
     course_position ,
-    created_at ,
-    updated_at ,
-    course_url ,
-    deleted
+    created_at TIMESTAMPZ DEFAULT NOW(),
+    updated_at TIMESTAMPZ DEFAULT NOW(),
+    course_url VARCHAR(100) NOT NULL,
+    deleted BOOLEAN
 )
 
 CREATE TABLE Courses (
-    id ,
-    course_name ,
-    course_discription ,
-    created_at ,
-    updated_at ,
-    deleted
+    id SMALLINT PRIMARY KEY,
+    course_name VARCHAR(100) NOT NULL,
+    course_discription TEXT,
+    created_at TIMESTAMPZ DEFAULT NOW(),
+    updated_at TIMESTAMPZ DEFAULT NOW(),
+    deleted BOOLEAN
 )
 
 CREATE TABLE Modules (
-    id ,
-    module_name ,
-    module_discription ,
-    created_at ,
-    updated_at ,
-    deleted
+    id SMALLINT PRIMARY KEY,
+    module_name VARCHAR(100) NOT NULL,
+    module_discription TEXT,
+    created_at TIMESTAMPZ DEFAULT NOW(),
+    updated_at TIMESTAMPZ DEFAULT NOW(),
+    deleted BOOLEAN
 )
 
 CREATE TABLE Programs (
-    id ,
-    program_name ,
-    program_price ,
-    program_type ,
-    created_at ,
-    updated_at 
+    id SMALLINT PRIMARY KEY,
+    program_name VARCHAR(100) NOT NULL,
+    program_price FLOAT,
+    program_type VARCHAR(100) NOT NULL,
+    created_at TIMESTAMPZ DEFAULT NOW(),
+    updated_at TIMESTAMPZ DEFAULT NOW()
 )
